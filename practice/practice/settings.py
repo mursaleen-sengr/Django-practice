@@ -37,8 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'prac',
+    'core', # Add the core app to the installed apps
+    'tailwind', # Add the tailwind app to the installed apps
+    'theme',
+    'django_browser_reload', # Add the django browser reload app to the installed apps
+
+    
 ]
+TAILWIND_APP_NAME = 'theme' # Add the tailwind app name to the installed apps
+INTERNAL_IPS = ['127.0.0.1'] # Add the internal IP address to the installed apps
+NPM_BIN_PATH = '/usr/bin/npm' # Add the npm bin path to the installed apps
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "django_browser_reload.middleware.BrowserReloadMiddleware", # Add the browser reload middleware to the installed apps
 ]
 
 ROOT_URLCONF = 'practice.urls'
